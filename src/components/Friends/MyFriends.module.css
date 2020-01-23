@@ -1,0 +1,8 @@
+.postsBlock {
+    grid-area: span;
+}
+
+.friend {
+   display: inline-flex;
+    flex-direction: row;
+}
