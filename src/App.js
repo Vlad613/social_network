@@ -14,21 +14,19 @@ const App = (props) => {
 
 
     return (
-        <BrowserRouter>
-            <div className='app-wrapper'>
-                <Header/>
-                <Navbar sitebar={props.state.sitebar}/>
-                <div class='app-wrapper-content'>
-                    <Route path='/dialogs' render={() => <Dialogs state={props.state.messagesPage}/>}/>
-                    <Route path='/profile' render={() => <Profile profilePage={props.state.profilePage }
-                                                                  dispatch={props.dispatch}/>}/>
-                    <Route path='/music' component={Music}/>
-                    <Route path='/news' component={News}/>
-                    <Route path='/settings' component={Settings}/>
-                </div>
-
+        <div className='app-wrapper'>
+            <Header/>
+            <Navbar sitebar={props.state.sitebar}/>
+            <div class='app-wrapper-content'>
+                <Route path='/dialogs' render={() => <Dialogs store={props.store}/>}/>
+                <Route path='/profile' render={() => <Profile profilePage={props.state.profilePage}
+                                                              dispatch={props.dispatch}/>}/>
+                <Route path='/music' component={Music}/>
+                <Route path='/news' component={News}/>
+                <Route path='/settings' component={Settings}/>
             </div>
-        </BrowserRouter>
+
+        </div>
     );
 }
 
