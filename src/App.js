@@ -10,16 +10,16 @@ import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 
 
-const App = (props) => {
-
+const App = (props) => {debugger
 
     return (
         <div className='app-wrapper'>
             <Header/>
-            <Navbar sitebar={props.state.sitebar}/>
+            <Navbar sitebar={props.state.sitebarReducer}/>
             <div class='app-wrapper-content'>
-                <Route path='/dialogs' render={() => <Dialogs store={props.store}/>}/>
-                <Route path='/profile' render={() => <Profile profilePage={props.state.profilePage}
+                <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogReducer}
+                                                              dispatch={props.dispatch}/>}/>
+                <Route path='/profile' render={() => <Profile profilePage={props.state.profileReducer}
                                                               dispatch={props.dispatch}/>}/>
                 <Route path='/music' component={Music}/>
                 <Route path='/news' component={News}/>

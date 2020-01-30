@@ -4,6 +4,7 @@ import {NavLink} from "react-router-dom";
 import MyFriends from "../Friends/MyFriends";
 
 const Navbar = (props) => {
+
     return <div className={s.navbar}>
         <nav className={s.nav}>
             <div className={s.item}>
@@ -24,7 +25,7 @@ const Navbar = (props) => {
         </nav>
 
         <div className={s.friends}>
-            <MyFriends friends={props.sitebar.friends}/>
+            <MyFriends sitebar={props.sitebar}/>
         </div>
     </div>
 };
