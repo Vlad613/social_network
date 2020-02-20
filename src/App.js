@@ -10,7 +10,7 @@ import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 
 
-const App = (props) => {debugger
+const App = (props) => {
 
     return (
         <div className='app-wrapper'>
@@ -19,8 +19,11 @@ const App = (props) => {debugger
             <div class='app-wrapper-content'>
                 <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogReducer}
                                                               dispatch={props.dispatch}/>}/>
-                <Route path='/profile' render={() => <Profile profilePage={props.state.profileReducer}
-                                                              dispatch={props.dispatch}/>}/>
+                <Route path='/profile' render={() => <Profile store={props.store}
+
+                    // profilePage={props.state.profileReducer}
+                    // dispatch={props.dispatch}
+                />}/>
                 <Route path='/music' component={Music}/>
                 <Route path='/news' component={News}/>
                 <Route path='/settings' component={Settings}/>
