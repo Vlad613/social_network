@@ -5,7 +5,6 @@ import MyPosts from "./MyPosts";
 
 const MyPostsContainer = (props) => {
     let state = props.store.getState();
-debugger
     let addPost = () => {
         props.store.dispatch(addPostCreator());
     };
