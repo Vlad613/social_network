@@ -4,7 +4,7 @@ import Friend from "./Friend/Friend";
 
 
 const MyFriends = (props) => {
-    let friendElement = props.sitebar.friends
+    let friendElement = props.friends
         .map(p => <Friend ava={p.ava} name={p.name}/>);
 
     return <div className={s.postsBlock}>

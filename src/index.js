@@ -4,21 +4,22 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import React from "react";
 import {BrowserRouter} from "react-router-dom";
+import {Provider} from "react-redux";
 
 
-let rerenderApp = (state) => {
+let rerenderApp = () => {
     ReactDOM.render(
         <BrowserRouter>
-            <App state={state}
-                 dispatch={store.dispatch.bind(store)}
-                 store={store}/>,
+            <Provider store={store}>
+                <App/>,
+            </Provider>
         </BrowserRouter>,
         document.getElementById('root'));
 }
 
 rerenderApp(store.getState());
 
-store.subscribe(()=> {
+store.subscribe(() => {
     let state = store.getState();
     rerenderApp(state);
 });
