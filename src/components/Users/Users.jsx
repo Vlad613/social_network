@@ -1,35 +1,16 @@
 import React from 'react';
 import styles from './users.module.css';
+import * as axios from 'axios';
+import userPhoto from "../../assets/images/User_photo_small.png";
 
 let Users = (props) => {
 
     if (props.users.length === 0) {
-        props.setUsers([
-            {
-                id: 1,
-                photoUrl: 'https://lh3.googleusercontent.com/proxy/uQd6WG5b5waRCJ3MpKa721WCmWzZb0W_Vi45nSNBE7o4oGHvGU-bG558sV5VV4kJB66Z-iMxkcue3a8q5c5Y5DrZZEPr73IxRl573nS3L0ZbUyfUnxlO5JSOqyLukFB-xeFynw ',
-                followed: false,
-                fullName: 'Dmitry',
-                status: 'I am a boss',
-                location: {city: 'Minsk', country: 'Belarus'}
-            },
-            {
-                id: 2,
-                photoUrl: 'https://lh3.googleusercontent.com/proxy/uQd6WG5b5waRCJ3MpKa721WCmWzZb0W_Vi45nSNBE7o4oGHvGU-bG558sV5VV4kJB66Z-iMxkcue3a8q5c5Y5DrZZEPr73IxRl573nS3L0ZbUyfUnxlO5JSOqyLukFB-xeFynw ',
-                followed: true,
-                fullName: 'Petro',
-                status: 'I am a big boss',
-                location: {city: 'Kiev', country: 'Ukraine'}
-            },
-            {
-                id: 3,
-                photoUrl: 'https://lh3.googleusercontent.com/proxy/uQd6WG5b5waRCJ3MpKa721WCmWzZb0W_Vi45nSNBE7o4oGHvGU-bG558sV5VV4kJB66Z-iMxkcue3a8q5c5Y5DrZZEPr73IxRl573nS3L0ZbUyfUnxlO5JSOqyLukFB-xeFynw ',
-                followed: false,
-                fullName: 'Vasily',
-                status: 'I am a full boss',
-                location: {city: 'Moscow', country: 'Russia'}
-            },
-        ])
+
+        axios.get("https://social-network.samuraijs.com/api/1.0/users")
+            .then(response => {
+                props.setUsers(response.data.items);
+            });
     }
 
     return <div>
@@ -37,7 +18,7 @@ let Users = (props) => {
             props.users.map(u => <div key={u.id}>
                 <span>
                     <div>
-                        <img src={u.photoUrl} className={styles.userPhoto}/>
+                        <img src={u.photos.small != null ? u.photos.small : userPhoto} className={styles.userPhoto}/>
                     </div>
                     <div>
                         {u.followed ? <button onClick={() => {
@@ -53,13 +34,13 @@ let Users = (props) => {
 
                 <span>
                     <span>
-                        <div> {u.fullName}</div>
+                        <div> {u.name}</div>
                         <div>{u.status}</div>
                     </span>
 
                     <span>
-                        <div>{u.location.country}</div>
-                        <div>{u.location.city}</div>
+                        <div>{"u.location.country"}</div>
+                        <div>{"u.location.city"}</div>
                 </span>
                 </span>
             </div>)
