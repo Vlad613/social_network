@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from "./users.module.css";
-import userPhoto from "../../assets/images/User_photo_small.png";
+import styles from './users.module.css';
+import userPhoto from '../../Picture/User_photo_small.png';
 
 let Usres = (props) => {
 
