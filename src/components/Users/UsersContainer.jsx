@@ -8,7 +8,7 @@ import usersReducer, {
     unfollowAC
 } from "../../redux/usersReducer";
 import Users from "./Users";
-import {AxiosInstance as axios} from "axios";
+import * as axios from "axios";
 
 
 class UsersContainerComponent extends React.Component {
