@@ -3,7 +3,7 @@ import profileReducer from "./ProfileReducer";
 import dialogReducer from "./DialogsReducer";
 import sitebarReducer from "./sitebarReducer";
 import usersReducer from "./usersReducer";
-import authReducer from "./auth-reducer";
+import authReducer from "./AuthReducer";
 
 
 
