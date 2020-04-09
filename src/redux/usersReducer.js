@@ -73,7 +73,7 @@ const usersReducer = (state = initialState, action) => {
     }
 
 };
-debugger
+
 export const followSuccess = (userId) =>
     ({type: FOLLOW, userId});
 export const unfollowSuccess = (userId) =>
