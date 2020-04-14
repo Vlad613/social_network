@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
+import ProfileStatus from './ProfileStatus.jsx';
 import Preloader from "../../common/Preloader/Preloader";
 
 
@@ -9,7 +10,7 @@ const ProfileInfo = (props) => {
     }
     return (
         <div>
-            <div>
+            <div className={s.headerImage}>
                 <img src='https://www.w3schools.com/howto/img_snow_wide.jpg' alt='image rocks'/>
             </div>
             <div className={s.descriptionBlock}>
@@ -18,6 +19,9 @@ const ProfileInfo = (props) => {
             <div>
                 <span>{props.profile.aboutMe}</span>
             </div>
+
+            <ProfileStatus status={"Hi, Bro!"}/>
+
         </div>
     )
 };
