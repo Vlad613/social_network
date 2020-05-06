@@ -3,7 +3,7 @@ import styles from './users.module.css';
 import userPhoto from '../../Picture/User_photo_small.png';
 import {NavLink} from "react-router-dom";
 
-let Usres = (props) => {
+let Users = (props) => {
 
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
@@ -60,4 +60,4 @@ let Usres = (props) => {
     </div>
 }
 
-export default Usres;
+export default Users;
