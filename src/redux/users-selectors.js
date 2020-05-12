@@ -1,4 +1,4 @@
-export const getUsersOnPage = (state)=> {
+export const getUsers = (state)=> {
     return state.usersReducer.users;
 };
 
