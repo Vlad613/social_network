@@ -3,10 +3,3 @@
     height: 100px;
 }
 
-.selectedPage {
-    color: red ;
-}
-
-.currentPage {
-    cursor: pointer;
-}

@@ -1,0 +1,7 @@
+.selectedPage {
+    color: red ;
+}
+
+.currentPage {
+    cursor: pointer;
+}
