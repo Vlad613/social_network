@@ -23,8 +23,7 @@ class UsersContainerComponent extends React.Component {
     }
 
     onPageChanged = (pageNumber) => {
-        const {pageSize} =this.props
-        requestUsers(pageNumber, pageSize);
+        this.props.requestUsers(pageNumber, this.props.pageSize);
     };
 
     render() {

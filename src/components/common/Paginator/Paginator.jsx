@@ -15,10 +15,10 @@ let Paginator = ({currentPage, totalUsersCount, pageSize, onPageChanged}) => {
 
             return <span className={currentPage === p && styles.selectedPage}
                          onClick={() => {
-                             onPageChanged(p)
+                             onPageChanged(p);
                          }}> {p} </span>
         })}
     </div>
-}
+};
 
 export default Paginator;
