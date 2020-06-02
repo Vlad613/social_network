@@ -1,5 +1,5 @@
 import React from 'react';
-import preloader from "../../../Picture/LoadingBlocks.svg";
+import preloader from "../../../Picture/LoadingBlocks.svg.png";
 
 
 let Preloader = (props) => {
