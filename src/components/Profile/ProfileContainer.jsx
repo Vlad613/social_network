@@ -7,7 +7,6 @@ import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 
 
-
 class ProfileContainer extends React.Component {
 
     componentDidMount() {
@@ -26,10 +25,12 @@ class ProfileContainer extends React.Component {
         return (
             <Profile
                 {...this.props}
-                     userId={this.props.userId}
-                     profile={this.props.profile}
-                     status={this.props.status}
-                     updateStatus={this.props.updateStatus}/>
+
+                authorizedUserId={this.props.authorizedUserId}
+                userId={this.props.userId}
+                profile={this.props.profile}
+                status={this.props.status}
+                updateStatus={this.props.updateStatus}/>
         )
     }
 };
