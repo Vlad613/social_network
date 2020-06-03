@@ -9,12 +9,22 @@ const ProfileInfo = ({
                          profile,
                          status,
                          updateStatus,
-                         isOwner
+                         isOwner,
+                         savePhoto
                      }) => {
 
     if (!profile) {
-        return <Preloader/>
+        return <Preloader/>;
+
     }
+
+
+    const onMainPhotoSelected = (e) => {
+        if (e.target.files.length) {
+            savePhoto(e.target.files[0]);
+        }
+    };
+
     return (<div>
             <div className={s.headerImage}>
                 {isOwner && <img src='https://www.w3schools.com/howto/img_snow_wide.jpg' alt='image rocks'/>}
@@ -23,8 +33,9 @@ const ProfileInfo = ({
             <div className={s.descriptionBlock}>
                 <img className={s.mainPhoto}
                      src={profile.photos.large || userPhoto}/>
-                {isOwner && <input type={'file'}/>}
+                {isOwner && <input type={'file'} onChange={onMainPhotoSelected}/>}
             </div>
+
             <div>
                 <span>{profile.aboutMe}</span>
             </div>
