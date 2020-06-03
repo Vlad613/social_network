@@ -26,10 +26,9 @@ class ProfileContainer extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (this.props.match.params.userId != prevProps.match.params.userId)
-        {this.refreshProfile();}
-        // if  (this.props.profile.photos.large != prevProps.props.profile.photos.large)
-        // {this.refreshProfile();}
+        if (this.props.match.params.userId != prevProps.match.params.userId) {
+            this.refreshProfile();
+        }
     };
 
     render() {
