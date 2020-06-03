@@ -1,6 +1,8 @@
 import React from 'react';
 import Preloader from "../../common/Preloader/Preloader";
-import ProfileInfoIsMy from "./ProfileInfoIsMy";
+import s from "./ProfileInfo.module.css";
+import userPhoto from "../../../Picture/User_photo_small.png";
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 
 const ProfileInfo = ({
@@ -13,11 +15,24 @@ const ProfileInfo = ({
     if (!profile) {
         return <Preloader/>
     }
-    return <ProfileInfoIsMy
-        isOwner={isOwner}
-        profile={profile}
-        status={status}
-        updateStatus={updateStatus}/>
+    return (<div>
+            <div className={s.headerImage}>
+                {isOwner && <img src='https://www.w3schools.com/howto/img_snow_wide.jpg' alt='image rocks'/>}
+            </div>
+
+            <div className={s.descriptionBlock}>
+                <img className={s.mainPhoto}
+                     src={profile.photos.large || userPhoto}/>
+                {isOwner && <input type={'file'}/>}
+            </div>
+            <div>
+                <span>{profile.aboutMe}</span>
+            </div>
+
+            <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
+
+        </div>
+    )
 };
 
 
