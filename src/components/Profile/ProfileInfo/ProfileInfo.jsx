@@ -8,7 +8,8 @@ const ProfileInfo = ({profile, status, updateStatus, userId}) => {
     if (!profile) {
         return <Preloader/>
     }
-    return <ProfileInfoIsMy profile={profile}
+    return <ProfileInfoIsMy
+                            profile={profile}
                             status={status}
                             updateStatus={updateStatus}/>
 };

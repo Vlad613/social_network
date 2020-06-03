@@ -5,10 +5,10 @@ import userPhoto from "../../../Picture/User_photo_small.png";
 
 
 const ProfileInfoIsMy = ({profile,status,updateStatus}) => {
-    if (profile.fullName !=  'VladislavZharnikov') {
+    if (profile.userId !=  '5800') {
     return <div>
                 <div className={s.descriptionBlock}>
-                    <img className={s.profilePhoto}
+                    <img className={s.mainPhoto}
                          src={profile.photos.large||userPhoto}/>
                 </div>
                 <div>
@@ -24,7 +24,7 @@ const ProfileInfoIsMy = ({profile,status,updateStatus}) => {
                 </div>
 
                 <div className={s.descriptionBlock}>
-                    <img className={s.profilePhoto}
+                    <img className={s.mainPhoto}
                          src={profile.photos.large||userPhoto}/>
                 </div>
                 <div>
