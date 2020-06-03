@@ -4,15 +4,17 @@ import ProfileInfoIsMy from "./ProfileInfoIsMy";
 
 
 const ProfileInfo = ({
-                         profile, status, updateStatus,
-                         authorizedUserId
+                         profile,
+                         status,
+                         updateStatus,
+                         isOwner
                      }) => {
 
     if (!profile) {
         return <Preloader/>
     }
     return <ProfileInfoIsMy
-        authorizedUserId={authorizedUserId}
+        isOwner={isOwner}
         profile={profile}
         status={status}
         updateStatus={updateStatus}/>

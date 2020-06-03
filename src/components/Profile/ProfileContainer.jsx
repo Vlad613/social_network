@@ -5,6 +5,7 @@ import {getStatus, getUserProfile, updateStatus} from "../../redux/ProfileReduce
 import {withRouter} from "react-router-dom";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 
 class ProfileContainer extends React.Component {
@@ -35,8 +36,7 @@ class ProfileContainer extends React.Component {
         return (
             <Profile
                 {...this.props}
-
-                authorizedUserId={this.props.authorizedUserId}
+                isOwner={!this.props.match.params.userId}
                 userId={this.props.userId}
                 profile={this.props.profile}
                 status={this.props.status}
