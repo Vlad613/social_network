@@ -1,34 +1,33 @@
 import React from 'react';
 import {createField, Input, Textarea} from "../../common/FormsControls/FormsControls";
 import {reduxForm} from "redux-form";
+import handleSubmit from "redux-form/lib/handleSubmit";
 
 
-const ProfileDataForm = ({profile}) => {
-    return <form>
+const ProfileDataForm = ({handleSubmit, profile}) => {
+    return <form onSubmit={handleSubmit}>
         <div>
-            <button onClick={() => {
-            }}>Save
-            </button>
+            <button>Save</button>
         </div>
         <div>
             <b>My name is: </b>
-            {createField("Full name", [],"fullName", Input)}
+            {createField("Full name", [], "fullName", Input)}
         </div>
 
         <div>
             <b>Looking for a job</b>:
-            {createField("", [],"lookingForAJob",  Input, {type: 'checkbox'})}
+            {createField("", [], "lookingForAJob", Input, {type: 'checkbox'})}
         </div>
 
-        {profile.lookingForAJob &&
+        {/*{profile.lookingForAJob &&*/}
         <div>
-            <b>My professional skills</b>: {profile.lookingForAJobDescription}
-            {createField("", [],"lookingForAJob",  Textarea, {type: 'checkbox'})}
+            <b>My professional skills</b>:
+            {createField("My professional skills", [], "lookingForAJobDescription", Textarea)}
         </div>
-        }
 
         <div>
             <b>About me</b>: {profile.aboutMe}
+            {createField("About me", [], "aboutMe", Textarea)}
         </div>
 
         {/*<div>*/}

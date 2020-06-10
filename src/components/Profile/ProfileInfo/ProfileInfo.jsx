@@ -11,7 +11,8 @@ const ProfileInfo = ({
                          status,
                          updateStatus,
                          isOwner,
-                         savePhoto
+                         savePhoto,
+                         saveProfile
                      }) => {
 
     let [editMode, setEditMode] = useState(false);
@@ -28,6 +29,10 @@ const ProfileInfo = ({
         }
     };
 
+    const onSubmit = (formData) => {
+        saveProfile(formData)
+    };
+
     return (<div>
             {/*<div className={s.headerImage}>*/}
             {/*    {isOwner && <img src='https://www.w3schools.com/howto/img_snow_wide.jpg' alt='image rocks'/>}*/}
@@ -40,7 +45,8 @@ const ProfileInfo = ({
 
                 <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
 
-                {editMode ? <ProfileDataForm profile={profile}/>
+                {editMode ? <ProfileDataForm profile={profile}
+                                             onSubmit={onSubmit}/>
                     :
                     <ProfileData profile={profile}
                                  isOwner={isOwner}
