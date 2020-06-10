@@ -105,7 +105,8 @@ export const saveProfile = (profile) => async (dispatch) => {
     if (response.data.resultCode === 0) {
         dispatch(getUserProfile(userId));
     }else{
-        dispatch(stopSubmit('login', {_error: response.data.messages[0]}))
+        dispatch(stopSubmit("edit-profile", {"contacts":{"facebook": response.data.messages[0]}}));
+        return Promise.reject(response.data.messages[0]);
     }
 };
 
