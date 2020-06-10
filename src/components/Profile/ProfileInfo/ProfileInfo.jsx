@@ -19,9 +19,7 @@ const ProfileInfo = ({
 
     if (!profile) {
         return <Preloader/>;
-
     }
-
 
     const onMainPhotoSelected = (e) => {
         if (e.target.files.length) {
@@ -30,7 +28,8 @@ const ProfileInfo = ({
     };
 
     const onSubmit = (formData) => {
-        saveProfile(formData)
+        saveProfile(formData);
+        setEditMode(false);
     };
 
     return (<div>
