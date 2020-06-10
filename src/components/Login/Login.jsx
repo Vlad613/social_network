@@ -8,7 +8,7 @@ import {Redirect} from "react-router-dom";
 import s from "../common/FormsControls/FormsControls.module.css"
 
 
-const LoginForm = ({handleSubmit, error}) => {
+const LoginForm = ({handleSubmit, error, captchaUrl}) => {
     return (
         <form onSubmit={handleSubmit}>
 
@@ -32,6 +32,8 @@ const LoginForm = ({handleSubmit, error}) => {
                 Input,
                 {type: 'checkbox'},
                 'remember Me')}
+
+            {captchaUrl && <img src={captchaUrl}/>}
 
             {error && <div className={s.formSummaryError}>
                 {error}
@@ -57,11 +59,12 @@ const Login = (props) => {
     }
     return <div>
         <hi>LOGIN</hi>
-        <LoginReduxForm onSubmit={onSubmit}/>
+        <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
     </div>
 };
 
 const mapStateToProps = (state) => ({
+    captchaUrl: state.authReducer.captchaUrl,
     isAuth: state.authReducer.isAuth
 });
 
