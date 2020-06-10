@@ -1,10 +1,9 @@
 import React from 'react';
 import {createField, Input, Textarea} from "../../common/FormsControls/FormsControls";
 import {reduxForm} from "redux-form";
-import handleSubmit from "redux-form/lib/handleSubmit";
 
 
-const ProfileDataForm = ({handleSubmit, profile}) => {
+const ProfileDataForm = ({handleSubmit}) => {
     return <form onSubmit={handleSubmit}>
         <div>
             <button>Save</button>
@@ -26,7 +25,7 @@ const ProfileDataForm = ({handleSubmit, profile}) => {
         </div>
 
         <div>
-            <b>About me</b>: {profile.aboutMe}
+            <b>About me</b>:
             {createField("About me", [], "aboutMe", Textarea)}
         </div>
 
