@@ -15,6 +15,7 @@ import Preloader from "./components/common/Preloader/Preloader";
 import store from "./redux/redux-store";
 import {withSuspense} from "./hoc/withSuspense";
 
+
 const DialogsContainer = React.lazy(() => import( './components/Dialogs/DialogsContainer'));
 const ProfileContainer = React.lazy(() => import( './components/Profile/ProfileContainer'));
 
@@ -39,6 +40,7 @@ class App extends Component {
         return (
             <div className='app-wrapper'>
                 <HeaderContainer/>
+                <div class='appContent'>
                 <Navbar/>
                 <div class='app-wrapper-content'>
 
@@ -54,8 +56,7 @@ class App extends Component {
                         <Route path='*' render={() => <div>404 NOT FOUND</div>}/>
                     </Switch>
                 </div>
-
-
+                </div>
             </div>
         );
     }

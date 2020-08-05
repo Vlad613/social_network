@@ -4,8 +4,9 @@ import React from "react";
 import SamuraiJSApp from "./App";
 
 
+
 ReactDOM.render(
-            <SamuraiJSApp/>,
+     <SamuraiJSApp/>,
     document.getElementById('root'));
 
 

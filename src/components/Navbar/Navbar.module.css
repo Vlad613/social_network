@@ -1,20 +1,36 @@
 .navbar {
-    background-color: green;
+    display: flex;
+    width: 25%;
     padding: 20px;
+    flex-direction: column;
+    background-color: #fff;
+    font-size: 1rem;
+    font-weight: 800;
 }
 
 .nav {
     grid-area: n;
     padding: 20px;
-  }
+}
+
+.svgContainer {
+    width: 25px;
+    height: 25px;
+    padding-right: 5px;
+}
+
+.item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
 
 .item a {
-    color: white;
+    color: #9a9fbf;
     text-decoration: none;
+    font-size: 1.5rem;
 }
+
 .item a.activeLink {
-    color: gold;
+    color: #ff5e3a;
 }
-.item {
-  color: white
-  }

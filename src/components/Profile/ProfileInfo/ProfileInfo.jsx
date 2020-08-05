@@ -34,10 +34,9 @@ const ProfileInfo = ({
             })
     };
 
-    return (<div>
-            {/*<div className={s.headerImage}>*/}
-            {/*    {isOwner && <img src='https://www.w3schools.com/howto/img_snow_wide.jpg' alt='image rocks'/>}*/}
-            {/*</div>*/}
+    return (<div className={s.descriptionContainer}>
+            <div className={s.headerImage}>
+            </div>
 
             <div className={s.descriptionBlock}>
                 <img className={s.mainPhoto}
